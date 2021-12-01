@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+    account move view
+
+    remarks:
+
+    2021-12-01 KPO remove wt_tax_id
+
+-->
 <odoo>
     <record id="view_move_form" model="ir.ui.view">
         <field name="name">account.move.form</field>
@@ -28,6 +36,33 @@
                 position="after"
             >
                 <field name="wt_tax_id" options="{'no_create': True}" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_move_form_removed" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="l10n_th_withholding_tax.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page/field[@name='invoice_line_ids']/tree/field[@name='wt_tax_id']"
+                position="replace"
+            >
+            </xpath>
+            <xpath
+                expr="//page/field[@name='invoice_line_ids']/form//field[@name='wt_tax_id']"
+                position="replace"
+            >
+            </xpath>
+            <xpath
+                expr="//page/field[@name='line_ids']/tree/field[@name='wt_tax_id']"
+                position="replace"
+            >
+            </xpath>
+            <xpath
+                expr="//page/field[@name='line_ids']/form//field[@name='wt_tax_id']"
+                position="replace"
+            >
             </xpath>
         </field>
     </record>

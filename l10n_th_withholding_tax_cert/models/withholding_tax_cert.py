@@ -199,6 +199,9 @@ class WithholdingTaxCert(models.Model):
             wt_reference = Cert.browse(wt_ref_id)
             for record in self:
                 # Hook to find wt move lines
+                print(record.payment_id)
+                print(record.move_id)
+                print(wt_account_ids)
                 wt_move_lines = record._get_wt_move_line(
                     record.payment_id, record.move_id, wt_account_ids
                 )
@@ -224,7 +227,7 @@ class WithholdingTaxCert(models.Model):
     @api.model
     def _prepare_wt_line(self, move_line):
         """ Hook point to prepare wt_line """
-        wt_percent = move_line.wt_tax_id.amount
+        wt_percent = move_line.tax_line_id.amount
         wt_cert_income_type = self._context.get("wt_cert_income_type")
         select_dict = dict(WHT_CERT_INCOME_TYPE)
         wt_cert_income_desc = select_dict.get(wt_cert_income_type, False)
@@ -245,7 +248,7 @@ class WithholdingTaxCert(models.Model):
         """ Hook point to get wt_move_lines """
         wt_move_lines = []
         if payment:
-            wt_move_lines = payment.move_id.line_ids.filtered(
+            wt_move_lines = payment.reconciled_bill_ids.line_ids.filtered(
                 lambda l: l.account_id.id in wt_account_ids
             )
         elif move:

@@ -73,9 +73,10 @@ class CreateWithholdingTaxCert(models.TransientModel):
                 }
             )
         else:
-            payment_wt = object_id.move_id.line_ids.filtered(
+            payment_wt = object_id.reconciled_bill_ids.line_ids.filtered(
                 lambda l: l.account_id.id in self.wt_account_ids.ids
             )
+
             if not payment_wt:
                 raise UserError(
                     _(

@@ -45,4 +45,7 @@
         parent="account.account_invoicing_menu"
         sequence="30"
     />
+    <record id="menu_account_withholding_tax" model="ir.ui.menu">
+        <field name="active">false</field>
+    </record>
 </odoo>
