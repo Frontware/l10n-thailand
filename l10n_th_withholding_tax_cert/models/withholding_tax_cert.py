@@ -222,7 +222,7 @@ class WithholdingTaxCert(models.Model):
                     }
                 )
                 for line in wt_move_lines:
-                    record.wt_line = CertLine.new(record._prepare_wt_line(line))
+                    record.wt_line += CertLine.new(record._prepare_wt_line(line))
 
     @api.model
     def _prepare_wt_line(self, move_line):
