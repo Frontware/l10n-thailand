@@ -1,7 +1,6 @@
 # Copyright 2020 Ecosoft Co., Ltd. (http://ecosoft.co.th)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from locale import currency
 from num2words import num2words
 
 from odoo import models, tools
@@ -41,9 +40,9 @@ class Currency(models.Model):
         # Thai Text with Thai Currency
         if self.name == "THB":
             try:
-                return num2words(amount, to="currency", lang=lang.iso_code, currency=self.name)
+                return num2words(amount, to="currency", lang=lang.iso_code)
             except NotImplementedError:
-                return num2words(amount, to="currency", lang="en", currency='USD')
+                return num2words(amount, to="currency", lang="en")
         # Thai Text with Foreign currency
         currency_unit_label = self._convert_currency_name_hook(self.currency_unit_label)
         amount_words = tools.ustr("{amt_value}{amt_word}").format(
