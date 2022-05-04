@@ -6,7 +6,7 @@
     "version": "14.0.1.0.0",
     "author": "Ecosoft,Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "website": "https://github.com/OCA/l10n-thailand",
+    "website": "https://github.com/Frontware/l10n-thailand",
     "category": "Localization / Accounting",
     "depends": ["l10n_th_tax_invoice", "hr_expense"],
     "data": ["views/hr_expense_view.xml"],

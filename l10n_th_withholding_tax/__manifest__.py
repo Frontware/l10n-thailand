@@ -4,9 +4,9 @@
 {
     "name": "Thai Localization - Withholding Tax",
     "version": "14.0.1.1.3",
-    "author": "Ecosoft, Odoo Community Association (OCA)",
+    "author": "Frontware, Ecosoft, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "website": "https://github.com/OCA/l10n-thailand",
+    "website": "https://github.com/Frontware/l10n-thailand",
     "category": "Localization / Accounting",
     "depends": ["account"],
     "data": [

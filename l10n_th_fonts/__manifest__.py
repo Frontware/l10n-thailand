@@ -4,10 +4,10 @@
 {
     "name": "Thai Localization - Fonts Thai",
     "version": "14.0.1.0.2",
-    "author": "Ecosoft, Odoo Community Association (OCA)",
+    "author": "Frontware, Ecosoft, Odoo Community Association (OCA)",
     "summary": "Collection of all fonts thai",
     "license": "AGPL-3",
-    "website": "https://github.com/OCA/l10n-thailand",
+    "website": "https://github.com/Frontware/l10n-thailand",
     "category": "Report",
     "depends": ["web"],
     "data": ["views/report_templates.xml"],
