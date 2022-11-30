@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-l10n-thailand Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-l10n_th_account_asset_management',
         'odoo14-addon-l10n_th_amount_to_text',
         'odoo14-addon-l10n_th_base_location',
         'odoo14-addon-l10n_th_company_novat',
@@ -15,6 +16,8 @@ setuptools.setup(
         'odoo14-addon-l10n_th_expense_withholding_tax',
         'odoo14-addon-l10n_th_fonts',
         'odoo14-addon-l10n_th_gov_purchase_agreement',
+        'odoo14-addon-l10n_th_gov_purchase_guarantee',
+        'odoo14-addon-l10n_th_gov_purchase_request',
         'odoo14-addon-l10n_th_partner',
         'odoo14-addon-l10n_th_promptpay',
         'odoo14-addon-l10n_th_sequence_be',
