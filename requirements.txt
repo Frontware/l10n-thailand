@@ -1,3 +1,4 @@
 # generated from manifests external_dependencies
 num2words
 promptpay
+pillow>=10.2.0 # not directly required, pinned by Snyk to avoid a vulnerability
